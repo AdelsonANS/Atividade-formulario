@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formulário</title>
+    <script>
+        function enviarFormulario(){
+
+            if(document.fromulario.idade.value === "" || document.fromulario.idade.value < 18 || document.fromulario.idade.value > 120){
+                alert( "A idade precisa ser entre 18 e 120!" );
+            }
+            return false;
+
+            //document.getElementById("fromulario").submit();
+    }
+    
+    </script>
+</head>
+<body>
+    <form action="" method="post" name="fromulario"  >
+        <fieldset>
+            <legend>Formulário de Inscrição</legend>
+            <div class="content">
+                <div class="textTitle">Nome</div >
+                <input name="name" type="text" placeholder="Insira seu nome">
+            </div>
+            <div class="content">
+                <div class="textTitle">Sobrenome</div >
+                <input name="sobrenome" type="text" placeholder="Insira seu Sobrenome">
+            </div>
+            <div class="content">
+                <div class="textTitle">Idade</div >
+                <input style="width: 50px;" name="idade" type="number">
+            </div>
+            <div class="content">
+                <div class="textTitle">E-mail</div >
+                <input placeholder="Insira seu E-mail" type="email">
+            </div>
+            <div class="content">
+                <div class="textTitle">Sexo</div >
+                    <label for="masculino">Masculino</label><br>
+                    <input type="radio" id="masculino" name="sexo" value="Masculino">
+                    <label for="feminino">Feminino</label><br>
+                    <input type="radio" id="feminino" name="sexo" value="Feminino">
+            </div>
+            <div  class="content">
+                <div class="textTitle">Foto</div >
+                <input type="file" name="image" accept="image/jpeg, image/png">
+            </div>
+            <div class="content">
+                <div class="textTitle">País</div >
+                <select name="select">
+                    <option value="valor1" selected>Argentina</option>
+                    <option value="valor2" >Brasil</option>
+                    <option value="valor3">Peru</option>
+                </select>
+            </div>
+            <div class="content">
+                <div class="textTitle">As linguagens que você prefere?</div >
+                <select name="select" multiple>
+                    <option value="valor1">JavaScript</option>
+                    <option value="valor2">Java</option>
+                    <option value="valor3">C#</option>
+                    <option value="valor3">C++</option>
+                </select>
+            </div>
+
+            <div class="content">
+                <div class="textTitle">Áreas de Atuação</div>
+                <input type="checkbox" id="Comp" name="Comp" value="Computação">
+                <label for="Comp"> Computação</label><br>
+                <input type="checkbox" id="Gestão" name="Gestão" value="Gestão">
+                <label for="Gestão"> Gestão</label><br>
+                <input type="checkbox" id="Pedagogia" name="Pedagogia" value="Pedagogia">
+                <label for="Pedagogia">Pedagogia</label><br>
+            </div>
+
+            <input name="Submit" type="submit"  class="formobjects"
+            value="Enviar dados" onclick="return enviarFormulario()">
+    
+            <input name="Reset" type="reset" class="formobjects"
+            value="Redefinir">
+            
+          
+        </fieldset>
+      </form>
+</body>
+</html>
